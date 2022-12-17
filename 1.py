@@ -49,6 +49,9 @@ print(type(My),"|",bool(My))
 ll = [1,2,3]
 print(ll[0])
 del ll[0]
+ll.remove(2) 
+#del index  , remove  value
+
 
 
 
