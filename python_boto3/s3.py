@@ -6,3 +6,5 @@ response = client.put_object(
     Key='hello.txt'
 
 )
+response = client.list_buckets() # bucket 목록
+print(response)
