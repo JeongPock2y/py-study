@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 client = boto3.client('cloudwatch')
 
 # Set the start and end times to the past 24 hours
-start_time = datetime.utcnow() - timedelta(hours=24) + timedelta(hours=9)
+start_time = datetime.utcnow() - timedelta(hours=1) + timedelta(hours=9)
 end_time = datetime.utcnow() + timedelta(hours=9)
 print(start_time)
 print(end_time)
@@ -14,13 +14,13 @@ response = client.get_metric_statistics(
         MetricName='CPUUtilization',
         Dimensions=[
             {
-            'Name': 'sendtest',
+            'Name': 'InstanceId',
             'Value': 'i-016e4006e19c68bde'
             },
         ],
         StartTime=start_time,
         EndTime=end_time,
-        Period=86400,
+        Period=600,
         Statistics=[
             'Average',
         ],
@@ -30,5 +30,5 @@ response = client.get_metric_statistics(
 for cpu in response['Datapoints']:
     if 'Average' in cpu:
         print(cpu['Average'])
-    print(cpu)
+#print(cpu)
 print("cloudwatch metrics3")
