@@ -39,6 +39,6 @@ print(g)
 h = df.iloc[[0, 1], [2, 3]]
 print(h)
 i = df.loc['서준':'우현', '음악':'체육']
-print(i)
+print("d",i)
 j = df.iloc[0:2, 2:]
 print(j)

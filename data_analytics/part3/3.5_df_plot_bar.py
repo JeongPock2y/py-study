@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-df = pd.read_excel('./남북한발전전력량.xlsx', engine='openpyxl')  # 데이터프레임 변환 
+df = pd.read_excel('C:\doit\py-study\data_analytics\part3\남북한발전전력량.xlsx', engine='openpyxl')  # 데이터프레임 변환 
 
 df_ns = df.iloc[[0, 5], 3:]            # 남한, 북한 발전량 합계 데이터만 추출
 df_ns.index = ['South','North']        # 행 인덱스 변경
